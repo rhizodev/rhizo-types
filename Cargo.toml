@@ -1,0 +1,11 @@
+[package]
+name = "rhizo-types"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
+borsh = "0.10.3"
+serde = {version = "1.0.188", features=["derive"]}
+
+[lib]
+crate-type = ["lib"]
