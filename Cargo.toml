@@ -2,6 +2,8 @@
 name = "rhizo-types"
 version = "0.0.1"
 edition = "2021"
+description = "A collection of common Structs and Enums used in the software components that comprise the Rhizo network"
+license = "MIT"
 
 [dependencies]
 borsh = "0.10.3"
