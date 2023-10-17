@@ -12,7 +12,8 @@ pub struct RouteData {
     pub route: String,
     pub module_cid: [u8; 32],
     pub encodings: Vec<Encoding>,
-    pub arguments: Vec<(Vec<u8>, ArgumentType)>
+    pub arguments: Vec<(Vec<u8>, ArgumentType)>,
+    pub bump_seed: Option<u8>
 }
 
 /// Representation of route deploy data
