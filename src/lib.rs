@@ -25,7 +25,7 @@ pub struct RouteDeploy {
 /// Supported HTTP route encoding types
 #[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
 pub enum Encoding {
-    ApplicatoinJson,
+    ApplicationJson,
     ApplicationOctetStream,
     TextHtml,
     TextPlain,
