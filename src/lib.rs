@@ -13,7 +13,20 @@ pub struct RouteData {
     pub module_cid: [u8; 32],
     pub encodings: Vec<Encoding>,
     pub arguments: Vec<(Vec<u8>, ArgumentType)>,
-    pub bump_seed: Option<u8>
+    pub bump_seed: Option<u8>,
+}
+
+/// Representation of RouteData as exists on the Solana blockchain
+#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
+pub struct RouteUpdate {
+    pub route: String,
+    pub dev_routes_bump_seed: Option<u8>
+}
+
+/// Representation of DeveloperRoutes as exists on the Solana blockchain
+#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
+pub struct DeveloperRoutes {
+    pub routes: Vec<String>,
 }
 
 /// Representation of route deploy data
