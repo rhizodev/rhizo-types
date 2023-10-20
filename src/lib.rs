@@ -15,9 +15,9 @@ pub struct OnchainBytes {
 /// Smart-contract update instruction for OnchainBytes
 #[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
 pub struct UpdateOnchainBytes {
-    bytes: OnchainBytes,
-    seed: String,
-    bump_seed: Option<u8>,
+    pub bytes: OnchainBytes,
+    pub seed: String,
+    pub bump_seed: Option<u8>,
 }
 
 /// Representation of RouteData as exists on the Solana blockchain
