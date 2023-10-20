@@ -13,6 +13,7 @@ pub struct RouteData {
     pub module_cid: [u8; 32],
     pub encodings: Vec<Encoding>,
     pub arguments: Vec<(Vec<u8>, ArgumentType)>,
+    pub cache_config: (bool, Option<u64>),
     pub bump_seed: Option<u8>,
 }
 
