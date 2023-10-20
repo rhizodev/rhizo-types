@@ -12,6 +12,14 @@ pub struct OnchainBytes {
     pub inner: Vec<u8>
 }
 
+/// Smart-contract update instruction for OnchainBytes
+#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
+pub struct UpdateOnchainBytes {
+    bytes: OnchainBytes,
+    seed: String,
+    bump_seed: Option<u8>,
+}
+
 /// Representation of RouteData as exists on the Solana blockchain
 #[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
 pub struct RouteData {
