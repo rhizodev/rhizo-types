@@ -6,6 +6,12 @@
 use borsh::{BorshSerialize, BorshDeserialize};         
 use serde::{Serialize, Deserialize};
 
+/// Representation of OnchainBytes as exists on the Solana blockchain
+#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
+pub struct OnchainBytes {
+    pub inner: Vec<u8>
+}
+
 /// Representation of RouteData as exists on the Solana blockchain
 #[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
 pub struct RouteData {
