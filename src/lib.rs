@@ -8,14 +8,16 @@ use serde::{Serialize, Deserialize};
 
 /// Representation of OnchainBytes as exists on the Solana blockchain
 #[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
-pub struct OnchainBytes {
-    pub inner: Vec<u8>
+pub struct SignedOnchainBytes {
+    pub inner: Vec<u8>,
+    pub owner_pubkey: [u8; 32]
 }
 
 /// Smart-contract update instruction for OnchainBytes
 #[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
-pub struct UpdateOnchainBytes {
-    pub bytes: OnchainBytes,
+pub struct SignedOnchainBytesUpdate {
+    pub bytes: SignedOnchainBytes,
+    pub signature: String,
     pub seed: String,
     pub bump_seed: Option<u8>,
 }
@@ -28,14 +30,22 @@ pub struct RouteData {
     pub encodings: Vec<Encoding>,
     pub arguments: Vec<(Vec<u8>, ArgumentType)>,
     pub cache_config: (bool, Option<u64>),
-    pub bump_seed: Option<u8>,
+    pub bump_seed: Option<u8>, // send this off to an RouteDataUpdate
 }
 
 /// Representation of RouteData as exists on the Solana blockchain
 #[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
 pub struct RouteUpdate {
     pub route: String,
-    pub dev_routes_bump_seed: Option<u8>
+    pub bump_seed: Option<u8>,
+    pub operation: Operation,
+}
+
+/// Specifier for updates with multiple operations
+#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
+pub enum Operation {
+    ADD,
+    REMOVE
 }
 
 /// Representation of DeveloperRoutes as exists on the Solana blockchain
