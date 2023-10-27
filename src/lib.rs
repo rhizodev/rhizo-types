@@ -37,14 +37,7 @@ pub struct RouteData {
 pub struct RouteUpdate {
     pub route: String,
     pub bump_seed: Option<u8>,
-    pub operation: Operation,
-}
-
-/// Specifier for updates with multiple operations
-#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
-pub enum Operation {
-    ADD,
-    REMOVE
+    pub operation: u8,
 }
 
 /// Representation of DeveloperRoutes as exists on the Solana blockchain
