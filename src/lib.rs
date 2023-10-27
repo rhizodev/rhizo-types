@@ -17,7 +17,6 @@ pub struct SignedOnchainBytes {
 #[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SignedOnchainBytesUpdate {
     pub bytes: SignedOnchainBytes,
-    pub signature: String,
     pub seed: String,
     pub bump_seed: Option<u8>,
 }

@@ -1,6 +1,6 @@
 [package]
 name = "rhizo-types"
-version = "0.1.6"
+version = "0.1.7"
 edition = "2021"
 description = "A collection of common Structs and Enums used in the software components that comprise the Rhizo network"
 license = "MIT"
