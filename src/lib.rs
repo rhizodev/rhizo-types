@@ -6,6 +6,19 @@
 use borsh::{BorshSerialize, BorshDeserialize};         
 use serde::{Serialize, Deserialize};
 
+/// Update the listing for a signed on-chain bytes
+#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
+pub struct ListSignedOnchainBytesUpdate {
+    pub seed: String
+}
+
+/// Update the listing for a signed on-chain bytes
+#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
+pub struct DeveloperSignedOnchainBytes {
+    pub seeds: Vec<String>
+}
+
+
 /// Representation of OnchainBytes as exists on the Solana blockchain
 #[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SignedOnchainBytes {
