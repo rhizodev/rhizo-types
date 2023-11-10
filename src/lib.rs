@@ -18,7 +18,6 @@ pub struct DeveloperSignedOnchainBytes {
     pub seeds: Vec<String>
 }
 
-
 /// Representation of OnchainBytes as exists on the Solana blockchain
 #[derive(Clone, Debug, BorshDeserialize, BorshSerialize, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SignedOnchainBytes {
